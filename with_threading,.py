@@ -19,26 +19,6 @@ print("Example target: example.com")
 target = input("enter your target site: ")
 subdomains_list = []
 
-"""
-def find_subdomain(url, sub_url):
-    url = f"http://{sub_url}.{url}"
-    try:
-        rsp = requests.get(url)
-        if rsp:
-            subdomains_list.append(url)
-    except requests.exceptions.ConnectionError:
-        pass
-"""
-
-"""
-for x in existing_subdomains:
-    find_subdomain(target, sub_url=x)
-
-# find_subdomain(target, "mail")
-
-print(subdomains_list)
-"""
-
 
 def create_urls(url, sub_url, array_list):
     url = f"http://{sub_url}.{url}"
