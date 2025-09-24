@@ -1,31 +1,79 @@
-<h1>Subdomain Lister</h1>
+# Python Subdomain Scanner
 
-<p>Subdomain Lister is a Python script that lists subdomains of a target domain. It retrieves subdomains by combining them with a target domain and checks their existence using HTTP requests.</p>
+A simple yet fast, multithreaded subdomain enumeration tool built with Python. This script scans a target domain for common subdomains using a provided wordlist.
 
-<h2>Files</h2>
+<p>
+  <img src="https://github.com/onurmertanarat/SubdomainLister/blob/master/assets/subdomain-lister-screenshot.PNG" alt="Screenshot of the tool in action" width="600">
+</p>
 
-<p>The project includes the following file:</p>
+---
 
-<ul>
-    <li><strong>subdomainlist.txt:</strong> Text file containing a list of common subdomains.</li>
-    <li><strong>with_threading.py:</strong> Python script that lists subdomains with threading for improved performance.</li>
-</ul>
+## Features
 
-<h2>Usage</h2>
+* **Multithreaded Scanning:** Utilizes a worker/queue model with a fixed number of threads to perform high-speed, concurrent scans, making it significantly faster than sequential scanning.
+* **Saves Results to File:** Automatically saves all found subdomains to a formatted text file named after the target domain (e.g., `google.com_subdomains.txt`) for persistence and later use.
+* **Simple and Interactive:** Requires no complex command-line arguments. Just run the script and enter the target domain when prompted.
+* **Efficient Wordlist Handling:** Automatically removes duplicate entries from the wordlist before scanning to avoid redundant checks.
 
-<ol>
-    <li>Ensure you have Python installed on your system.</li>
-    <li>Create a text file named <code>subdomainlist.txt</code> and populate it with the list of subdomains you want to check.</li>
-    <li>Run the <code>with_threading.py</code> script in your terminal:</li>
-    <pre><code>python with_threading.py</code></pre>
-    <li>Enter the target domain when prompted.</li>
-    <li>Wait for the script to finish checking the existence of subdomains. The results will be printed to the console.</li>
-</ol>
+---
 
-<h2>Threading Usage</h2>
+## Technology Stack
 
-<p>The <code>with_threading.py</code> script utilizes threading to improve performance when checking the existence of subdomains. Threading allows multiple HTTP requests to be made concurrently, reducing the overall execution time of the script.</p>
+* **Python 3**
+* **Standard Libraries:** `threading`, `queue`, `time`
+* **External Libraries:** `requests` (for HTTP requests), `termcolor` (for colored console output).
 
-<h2>Contributing</h2>
+---
 
-<p>If you would like to contribute, please open an issue or submit a pull request. Your constructive contributions are welcome!</p>
+## Setup and Usage
+
+### Prerequisites
+
+* Python 3.6+
+* pip
+
+### Installation & Setup
+
+1.  **Clone the repository:**
+    ```sh
+    git clone [https://github.com/onurmertanarat/SubdomainLister.git](https://github.com/onurmertanarat/SubdomainLister.git)
+    cd SubdomainLister
+    ```
+
+2.  **Create and activate a virtual environment:**
+    ```sh
+    # Create the environment
+    python -m venv venv
+
+    # Activate on Windows
+    venv\Scripts\activate
+
+    # Activate on macOS/Linux
+    source venv/bin/activate
+    ```
+
+3.  **Install the required packages:**
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+### Running the Tool
+
+Simply run the script using Python:
+
+```sh
+python subdomain.py
+```
+The script will then prompt you to enter the target domain you wish to scan.
+
+### Wordlist
+
+The tool uses the subdomainlist.txt file by default. You can customize this file by adding or removing subdomain entries to tailor your scans.
+
+---
+
+## Contact
+
+Onur Mert Anarat
+
+[linkedin.com/in/onurmertanarat](https://www.linkedin.com/in/onurmertanarat)
